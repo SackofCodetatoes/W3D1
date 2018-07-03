@@ -37,8 +37,10 @@ def largest_in_continent
   # Find the largest country (by area) in each continent. Show the continent,
   # name, and area.
   execute(<<-SQL)
+  SELECT
+    area
     SELECT
-      area, continent
+      MAX(area)
     FROM
       countries
     -- WHERE (
